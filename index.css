@@ -54,10 +54,11 @@ body {
   display: flex;
   justify-content: right;
   align-items: center;
+  overflow: auto
 }
 
 .cuenta {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .resultado {
@@ -72,7 +73,8 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr)
+  grid-template-rows: repeat(5, 1fr);
+  position: relative;
 }
 
 .numero,
@@ -85,16 +87,81 @@ body {
   transition: all .3s ease;
 }
 
-.numero:hover {
-  box-shadow: inset 0px 0px 100px 0px rgba(255, 255, 255, 0.829);
+.borrar {
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  width: 23%;
+  height: 38%;
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.452);
+  cursor: pointer;
+  transition: all .3s ease;
+  background: rgba(255, 255, 255, 0.247);
+  border-color: rgb(128, 0, 0);
+}
+
+.mas {
+  width: 23%;
+  height: 38%;
+  position: absolute;
+  bottom: 0%;
+  right: 26%;
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.452);
+  cursor: pointer;
+  transition: all .3s ease;
+  background: rgba(255, 255, 255, 0.123);
+  border-color: rgb(251, 255, 0);
+  margin: 0;
+}
+
+.igual {
+  width: 48%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 1%;
+  font-size: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.452);
+  cursor: pointer;
+  transition: all 1s ease;
+  background: rgba(255, 255, 255, 0.247);
+  border-color: rgb(128, 0, 0);
+  padding: .5rem;
+}
+
+.borrar:hover {
+  box-shadow: inset 0px -10px 10px 0px rgba(255, 255, 255, 0.329);
   background: transparent;
   border: none;
+  border-top: 2px solid rgb(128, 0, 0);
+}
+
+
+.igual:hover {
+  box-shadow: inset 0px -10px 10px 0px rgba(255, 255, 255, 0.329);
+  background: transparent;
+  border: none;
+  border-top: 2px solid rgb(128, 0, 0);
+}
+
+
+.numero:hover {
+  box-shadow: inset 0px -10px 10px 0px rgba(255, 255, 255, 0.329);
+  background: transparent;
+  border: none;
+  border-top: 2px solid rgb(94, 255, 0);
 }
 
 .operador:hover {
-  box-shadow: inset 0px 0px 100px 0px rgba(255, 255, 255, 0.829);
+  box-shadow: inset 0px -10px 10px 0px rgba(255, 255, 255, 0.329);
   background: transparent;
   border: none;
+  border-top: 2px solid rgb(251, 255, 0);
 }
 
 .numero {
@@ -105,10 +172,4 @@ body {
 .operador {
   background: rgba(255, 255, 255, 0.123);
   border-color: rgb(251, 255, 0);
-}
-
-.operador.igual {
-  background: rgba(255, 255, 255, 0.247);
-  border-color: rgb(128, 0, 0);
-  grid-column: 1/5;
 }
