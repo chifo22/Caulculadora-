@@ -8,8 +8,9 @@ let pantallaArriba = document.querySelector(".cuenta")
 let pantallaAbajo = document.querySelector(".resultado")
 
 for (let i = 0; i < numeros.length; i++) {
-  const numero = numeros[i].textContent;
-  console.log(numero)
+  if(botones == numeros[i].textContent){
+  pantallaArriba += numeros[i].textContent;
+  console.log(numero)}
 }
 
 botones.addEventListener("click", () => {
